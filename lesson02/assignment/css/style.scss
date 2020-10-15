@@ -4,3 +4,57 @@
 @import 'settings.responsive';
 @import 'components.content';
 
+* {
+  color: $font-color;
+}
+
+.outer-box {
+  background-color: $outer-box-color;
+  width: 50%;
+  min-width: 45rem;
+  padding: 2rem;
+}
+
+.inner-box {
+  padding: 2rem;
+  text-align: center;
+  display:flex;
+  flex-direction: row;
+  background-color: $white;
+
+  .inner-most-box {
+    //tried to center the linkedIn logo but had a difficult time doing so.
+    width: 100%;
+    text-align: left;
+    padding: 1rem 2rem 0 2rem;
+    display:flex;
+    flex-direction: column;
+    background-color: $inner-most-box-color;
+  }
+  
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+.profile {
+  padding-right: 2rem;
+
+  img {
+    border-radius:50%;
+    width: 100%;
+  }
+  
+}
+
+.name {
+  font-weight: bolder;
+  font-size: x-large;
+}
+
+.job-title{
+  font-style:italic;
+  font-size:initial;
+  font-weight: normal;
+}
