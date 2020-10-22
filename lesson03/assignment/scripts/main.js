@@ -2,7 +2,7 @@
 
 //get json data entries:
 $.getJSON('../data/data.json', function(data) {
-  console.log(data);
+  // console.log(data);
 /* since '$.getJSON' is asynchronous, we need to call a helper function within
   the callback so that there wont be any issues with using the date we're getting 
   from data.json */
@@ -27,10 +27,20 @@ function createCards(data) {
           <p><span class="bold">Major: </span>${el.major}</p>
           <p><span class="bold">Email: </span>${el.email}</p>
           
-          <p> <img src="img/linkedin.svg" alt="linkedin logo" class="li-logo">${el.linkedInUrl}</p>
+          <p> <img src="img/linkedin.svg" alt="linkedin logo" class="li-logo"> ${el.linkedInUrl}</p>
         </div>    
       </div>
+      <div class="code-languages">
+        ${
+            el.codeLanguages.map(function(val) {
+              return `<p>${val}</p>`
+            }).join('')
+        }      
+      </div>
     </article>`;
+  //i found out how to do this over here: https://stackoverflow.com/questions/45812160/unexpected-comma-using-map
+  //i know since i am using a array function within an array function that this will be n^2 complexity but not sure about any other way to approach this.
+
     return card;
   });
   $(".template-hook").append(dataHTML);
