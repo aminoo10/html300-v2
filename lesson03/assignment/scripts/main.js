@@ -12,6 +12,7 @@ $.getJSON('../data/data.json', function(data) {
 //we make the helper function here.
 function createCards(data) {
   let dataHTML = data.map(function(el) {
+    //i know this isn't typical html insertion but this feels much more simplier than adding "appends" everywhere.
     let card = 
     `<article class="outer-box">
       <div class="inner-box">
