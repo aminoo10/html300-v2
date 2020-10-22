@@ -1,8 +1,26 @@
 // Import partials here
 @import 'base.normalize';
 @import 'settings.variables';
+@import 'innerbox';
 @import 'settings.responsive';
 @import 'components.content';
+
+@media screen and (min-width: 1551px) {
+  //resizing text beyond a certain point
+  .inner-box {
+    @include modify-vw(2);
+  }
+
+  #name {
+    @include modify-vw(3);
+  }
+
+  #job-title {
+    @include modify-vw(2);
+    ;
+  }
+
+}
 
 * {
   color: $font-color;
@@ -11,27 +29,10 @@
 .outer-box {
   background-color: $outer-box-color;
   width: 50%;
-  min-width: 45rem;
+  //limiting the min-width of the border box as it created some issues when resizing to anything smaller)
+  min-width: 41rem;
   padding: 2rem;
-}
-
-.inner-box {
-  padding: 2rem;
-  text-align: center;
-  display:flex;
-  flex-direction: row;
-  background-color: $white;
-
-  .inner-most-box {
-    //tried to center the linkedIn logo but had a difficult time doing so.
-    width: 100%;
-    text-align: left;
-    padding: 1rem 2rem 0 2rem;
-    display:flex;
-    flex-direction: column;
-    background-color: $inner-most-box-color;
-  }
-  
+  display:inline-block;
 }
 
 .bold {
@@ -40,7 +41,7 @@
 
 .profile {
   padding-right: 2rem;
-
+  //setting border radius to 50% gives me the circle image effect.
   img {
     border-radius:50%;
     width: 100%;
