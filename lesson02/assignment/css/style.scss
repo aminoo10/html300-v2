@@ -1,6 +1,61 @@
 // Import partials here
 @import 'base.normalize';
 @import 'settings.variables';
+@import 'innerbox';
 @import 'settings.responsive';
 @import 'components.content';
 
+@media screen and (min-width: 1551px) {
+  //resizing text beyond a certain point
+  .inner-box {
+    @include modify-vw(2);
+  }
+
+  #name {
+    @include modify-vw(3);
+  }
+
+  #job-title {
+    @include modify-vw(2);
+    ;
+  }
+
+}
+
+* {
+  color: $font-color;
+}
+
+.outer-box {
+  background-color: $outer-box-color;
+  width: 50%;
+  //limiting the min-width of the border box as it created some issues when resizing to anything smaller)
+  min-width: 41rem;
+  padding: 2rem;
+  display:inline-block;
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+.profile {
+  padding-right: 2rem;
+  //setting border radius to 50% gives me the circle image effect.
+  img {
+    border-radius:50%;
+    width: 100%;
+  }
+  
+}
+
+.name {
+  font-weight: bolder;
+  font-size: x-large;
+}
+
+.job-title{
+  font-style:italic;
+  font-size:initial;
+  font-weight: normal;
+}

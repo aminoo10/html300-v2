@@ -15,3 +15,12 @@ html {
 h1 {
     color: $red;  
 }
+//simple function that makes factors of .5vw (ex: 1 -> 0.5vw, 2-> 1vw, 3 -> 1.5vw ... n -> 0.5n vw)
+@function halfVWFactor($size) {
+    $vwSize: $size * 0.5vw;
+    @return $vwSize; 
+}
+
+@mixin modify-vw($size) {
+    font-size: halfVWFactor($size);
+}
