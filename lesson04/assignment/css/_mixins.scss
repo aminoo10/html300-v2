@@ -1,0 +1,21 @@
+//mixin that defines properties of a simple square, with an input for color and position.
+@mixin define-square($color, $position, $width, $height) {
+  cursor: pointer;
+  background: $color;
+  border-radius: 5px;
+  margin-top: 3rem;
+  width: $width;
+  height: $height;
+  position: $position;
+
+}
+
+//mixin with the transformation effect, if I wanted to add more effects I would add another transform property within the element selector.
+@mixin transformation($time) {
+  transition: transform ($time);
+
+  &:hover {
+    transform: translate(10px, 10px);
+  }
+
+}
