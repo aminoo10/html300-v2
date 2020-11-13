@@ -4,3 +4,8 @@
 @import 'settings.responsive';
 @import 'components.content';
 
+//had issues with resizing the images within the carousel (setting a default size for the carousel that the images would fit into), 
+//will reserach this for another time, as this could be fairly useful.
+#carouselExampleControls {
+  width: 50rem;
+}
