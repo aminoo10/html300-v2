@@ -1,6 +1,87 @@
 // Import partials here
 @import 'base.normalize';
 @import 'settings.variables';
+@import 'innerbox';
 @import 'settings.responsive';
 @import 'components.content';
 
+@media screen and (min-width: 1551px) {
+  //resizing text beyond a certain point (0.5vw with a factor as the parameter)
+  .inner-box {
+    @include modify-vw(2);
+  }
+
+  #name {
+    @include modify-vw(3);
+  }
+
+  #job-title {
+    @include modify-vw(2);
+  }
+
+  .code-languages p {
+    @include modify-vw(2);
+  }
+
+}
+
+* {
+  color: $font-color;
+}
+
+//wanted to make the template cels allign evenly when enough room was available, but wasn't
+//working too well with flex.
+// .template-hook {
+//   display:flex;
+//   flex-direction: column;
+// }
+
+.outer-box {
+  background-color: $outer-box-color;
+  width: 50%;
+  //limiting the min-width of the border box as it created some issues when resizing to anything smaller)
+  min-width: 41rem;
+  padding: 2rem;
+  margin:1rem;
+  //inline-block would allign the cels in two columns if given enough space but with a margin it doens't s eem to be able to do this (which honestly is not really a big deal).
+  display: inline-block;
+  box-sizing: border-box;
+
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+.profile {
+  padding-right: 2rem;
+  //setting border radius to 50% gives me the circle image effect.
+  img {
+    border-radius:50%;
+    width: 100%;
+  }
+  
+}
+
+.name {
+  font-weight: bolder;
+  font-size: x-large;
+}
+
+.job-title{
+  font-style: italic;
+  font-size: initial;
+  font-weight: normal;
+}
+
+.code-languages {
+  p { 
+    background-color: darken($outer-box-color, 10%);
+    padding: 1rem;
+    border-radius:5px;
+  
+    }
+  display:flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+}

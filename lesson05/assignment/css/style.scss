@@ -4,3 +4,65 @@
 @import 'settings.responsive';
 @import 'components.content';
 
+//I didn't really have many comments for this styling, it is fairly self explanatory. 
+.main {
+  font-family: $helvetica-font;
+  color: white;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+    'header'
+    'nav'
+    'side content'
+    'footer';
+  text-align: center;
+  font-size: 1.5rem;
+
+}
+
+.header, .nav, .footer {
+  grid-column: 1 / span 2;
+}
+
+.header {
+  background-color: $red;
+  padding: 3rem;
+}
+.nav {
+  //was thinking of ways of using possibly autofill/fit instead of flexbox but it's just way simplier to use for this kind of 2d implementation
+  background-color: $green;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem;
+
+  &__item {
+    text-decoration: none;
+    color:inherit;
+  }
+
+  
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
+
+    &__item {
+      padding: 10px 0;
+    }
+  }
+
+  
+}
+.sidebar {
+  background-color: $purple;
+  //thought about possibly using a mixin to determine the height of this padding (5 * padding of header/footer) but dont think it's necessary.
+  padding: 15rem 1rem;
+}
+.main-content {
+  background-color: $orange;
+  padding: 15rem 1rem;
+}
+.footer {
+  background-color: $blue;
+  padding: 3rem;
+}

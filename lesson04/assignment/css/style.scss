@@ -1,0 +1,103 @@
+/*obtained from simple website detailing different transitions and transforms, I went with one
+* labeled as 'translate', and has two boxes on top of each other with one overlapping the other when hovering over.
+* https://thoughtbot.com/blog/transitions-and-transforms#translate */
+
+@import 'variables';
+@import 'mixins';
+
+.square_a {
+  @include define-square($squarea-color, absolute, 15rem, 15rem);
+}
+
+.square_b {
+  @include define-square($squareb-color, relative, 15rem, 15rem);  
+}
+
+.square_c {
+  @include define-square($squarec-color, absolute, 15rem, 15rem);
+}
+
+.square_d {
+  @include define-square($squared-color, relative, 15rem, 15rem);  
+}
+
+.square_e {
+  @include define-square($squaree-color, absolute, 15rem, 15rem);
+}
+
+.square_f {
+  @include define-square($squaref-color, relative, 15rem, 15rem);  
+}
+
+.square_b, .square_d, .square_f {
+  @include transformation(500ms);
+  //different animation: these squares also rotate while moving diagonally. 
+  transform: rotate(180deg);
+}
+
+
+
+.square-container {
+  display:flex;
+  justify-content: space-evenly;
+
+}
+
+
+.vertical-buttons {
+  list-style: none;
+  padding: 0;
+  margin:0;
+  display: inline-block;
+  text-align: center;
+  color: white;
+
+  &__item {
+    @include define-square($squareb-color, relative, 150px, 65px);  
+    line-height: 65px;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 1rem;
+    @include transformation(300ms);
+
+  }
+  
+  &--behind {
+    @include define-square($squarea-color, absolute, 150px, 65px);  
+    margin-top: 1rem;
+  }
+}
+
+
+.horizontal-buttons {
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  color: white;
+  margin-left: 25px;
+
+  &__item {
+    @include define-square($squareh-color, relative, 150px, 50px);  
+    float:left;
+    line-height: 50px;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 1rem;
+    margin-left: 0.2rem;
+    @include transformation(300ms);
+
+    &:hover {
+      transform: translate(0, 10px);
+    }
+
+  }
+  &--behind {
+    @include define-square($squareg-color, absolute, 150px, 50px);  
+    margin-top: 1rem;
+    margin-left: 0.2rem;
+    background: $squareg-color;
+  }
+
+}
+

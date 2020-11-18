@@ -1,25 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Assignment 1 - Part 2 Example</title>
-  <script src="scripts.js"></script>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment 1 - Part 2 Example</title>
+    <!-- jQuery CDN -->
+    <script 
+        src="https://code.jquery.com/jquery-3.3.1.js" 
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+    <!-- Local Files -->
+    <script src="scripts.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <main>
-    <h1>Using ES6+ Methods in DOM Interactions</h1>
-    <form id="example-form">
-      <label>Enter your favorite number:
-        <input type="text" class="input">
-      </label>
-      <input type="submit" value="See Demo!">
-      <p>The total of my array elements summed with your favorite number is: <span class="output"></span></p>
-    </form>
-  </main>
+    <main class="main">
+        <h1>Using ES6+ Methods</h1>
+        <section class="input-set">
+            <!-- Input -->
+            <input type="text" class="input">
+            <!-- Submit for Input -->
+            <input class="submit" type="submit"></input>
+            <!-- Result markup with hook for answer -->
+            <p class="markup">My total with reduce is now: <span class="sum"></span></p>
+        </section>
+
+        <section class="input-set">
+            <input type="text" class="input2">
+            <input class="submit2" type="submit"></input>
+            <p class="markup">Contains a number larger than the input value: <span class="sum2"></span></p>
+        </section>
+
+        <section class="input-set">
+            <input type="text" class="input3">
+            <input class="submit3" type="submit"></input>
+            <p class="markup">Prints out all values smaller than the input: <span class="sum3"></span></p>
+        </section>
+
+        <section class="input-set">
+            <input type="text" class="input4">
+            <input class="submit4" type="submit"></input>
+            <p class="markup">Contains the number inputted: <span class="sum4"></span></p>
+        </section>
+
+        <section class="input-set">
+            <input type="text" class="input5">
+            <input class="submit5" type="submit"></input>
+            <p class="markup">Adds all numbers by the input value: <span class="sum5"></span></p>
+        </section>
+
+       
+        
+        
+    </main>
 </body>
 
 </html>
