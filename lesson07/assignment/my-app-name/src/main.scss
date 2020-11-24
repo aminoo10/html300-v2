@@ -1,0 +1,15 @@
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+
+#carouselExampleControls {
+  width: 50rem;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+
+//strugling to figure out why fade in isn't working but it seems to be functional enough to I will accept these results
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
