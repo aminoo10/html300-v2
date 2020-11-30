@@ -7,10 +7,6 @@
       </button>            
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-          <!-- <li><router-link exact-active-class="active" class="nav-link" to="/"><slot name="link-one"></slot></router-link></li>
-          <li><router-link exact-active-class="active" class="nav-link" to="/images"><slot name="link-two"></slot></router-link></li>
-          <li><router-link exact-active-class="active" class="nav-link" to="/grids"><slot name="link-three"></slot></router-link></li>
-          <li><router-link exact-active-class="active" class="nav-link" to="/accordion"><slot name="link-four"></slot></router-link></li> -->
           <navli
           v-for="navLink in navLinks"
           v-bind:key="navLink"
